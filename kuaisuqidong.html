@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>快速启动 - 框架文档</title>
+    
+    
+</head>
+<body>
+<div id="root"></div>
+<script type="application/payload+json">
+{"id":"5v07om","summary":[{"title":"入门指南","articles":[{"title":"安装","ref":"安装.md","path":"anzhuang.html","metadata":{"mtime":"2023-03-07T10:56:10+08:00"}},{"title":"目录结构","ref":"目录结构.md","path":"mulujiegou.html","metadata":{"mtime":"2023-03-07T10:56:10+08:00"}},{"title":"快速启动","ref":"快速启动.md","path":"kuaisuqidong.html","metadata":{"mtime":"2023-03-07T10:56:10+08:00"}}]}],"config":{"title":"框架文档"},"file":{"path":"kuaisuqidong.html","content":"## 定义接口\n进入文件修改内容 `protobuf\/api\/api_demo.proto`, 所有语法符合 `protobuf` , 具体可以查看 [protocol](https:\/\/developers.google.cn\/protocol-buffers\/docs\/overview \"protocol\")，可以查看翻译号的文章 [知乎](https:\/\/zhuanlan.zhihu.com\/p\/451390348 \"知乎\")\n```protobuf\nsyntax = \"proto3\";\n\npackage api;\n\nimport \"http_config.proto\";\n\noption go_package = \"github.com\/go-home-admin\/go-admin\/generate\/proto\/api\";\n\nservice ApiDemo {\n  option (http.RouteGroup) = \"api\";\n\n  \/\/ api demo\n  rpc Home(ApiDemoHomeRequest)returns(ApiDemoHomeResponse){\n    option (http.Get) = \"\/api\/demo\";\n  }\n}\n\nmessage ApiDemoHomeRequest {\n  \/\/ @Tag(\"bson\") 如果有需要，还可以自定义标签，以方便和mongodb等服务共享结构\n  int64 id = 1;\n}\n\nmessage ApiDemoHomeResponse {\n  string start_time = 1;\n  string tip = 2;\n\n  oneof data {\n    string name = 3;\n  }\n}\n```\n\n生成基础代码并且启动应用\n```shell\nmake dev\n```\n这时候，你就可以访问你的接口了。如果还不行，可以检查下包依赖 `go mod tidy`\n<http:\/\/127.0.0.1:8080\/api\/demo>\n\nmake dev 命令生成的基础代码存放在 `app\/http\/api\/api_demo`, 可以进入编写您的逻辑代码， 基础代码包括如下\n```go\n\/\/ Home\nfunc (receiver *Controller) Home(req *api.ApiDemoHomeRequest, ctx http.Context) (*api.ApiDemoHomeResponse, error) {\n\tutils.Dump(req.Id)\n\treturn &api.ApiDemoHomeResponse{\n\t\tStartTime: \"\",\n\t\tTip:       \"\",\n\t\tData:      nil,\n\t}, nil\n}\n```","meta":{"mtime":"2023-03-07T10:56:10+08:00"}},"options":{"poweredBy":{"name":"顶想云","link":"https:\/\/www.topthink.com"}}}
+</script>
+
+    <script src="asset/lodash/lodash.min.js?v=4.17.21"></script>
+
+    <script src="asset/react/react.production.min.js?v=17.0.2"></script>
+
+    <script src="asset/react-dom/react-dom.production.min.js?v=17.0.2"></script>
+
+    <script src="asset/reader/index.js?v=1.0.50"></script>
+
+    <script src="asset/plugins/theme-default/index.js?v=1.0.25"></script>
+
+<script type="text/javascript">
+    TopWrite.bootstrap();
+</script>
+</body>
+</html>

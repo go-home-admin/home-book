@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>安装 - 框架文档</title>
+    
+    
+</head>
+<body>
+<div id="root"></div>
+<script type="application/payload+json">
+{"id":"5v07om","summary":[{"title":"入门指南","articles":[{"title":"安装","ref":"安装.md","path":"anzhuang.html","metadata":{"mtime":"2023-03-07T10:56:10+08:00"}},{"title":"目录结构","ref":"目录结构.md","path":"mulujiegou.html"},{"title":"快速启动","ref":"快速启动.md","path":"kuaisuqidong.html"}]}],"config":{"title":"框架文档"},"file":{"path":"anzhuang.html","content":"## 封装规则\n\n基本上集成的组件都是github上关键字搜索出来的，start最多的项目。例如web框架封装的是gin, orm是的是gorm等等；当然，这些组件提供的功能太过原始，基本都要封装一层，以方便扩展。\n\n## 安装\n```shell\ngit clone https:\/\/github.com\/go-home-admin\/go-admin.git\ncd go-admin\ncopy .env.copy .env\n```\n\n## Win 安装 | 手动安装\n1. 手动安装 protobuf\n2. 安装go辅助代码生成工具\n\n```shell\ngo get -u google.golang.org\/protobuf\/proto\ngo install github.com\/golang\/protobuf\/protoc-gen-go@latest\ngo install github.com\/go-home-admin\/toolset@latest\n```\n\n## Mac Os 安装\nmac原生支持make， 所以可以直接执行\n```shell\nmake mac-install\n```\n\n## win支持make\n\n如果你有[winget](https:\/\/github.com\/microsoft\/winget-cli)，你可以像这样通过 CLI 安装：\n\n```\nwinget install GnuWin32.Make\n\n```\n\n另外，请务必将安装路径添加到您的系统`PATH`：\n\n```\nC:\\Program Files (x86)\\GnuWin32\\bin\n```\n","meta":{"mtime":"2023-03-07T10:56:10+08:00"}},"options":{"poweredBy":{"name":"顶想云","link":"https:\/\/www.topthink.com"}}}
+</script>
+
+    <script src="asset/lodash/lodash.min.js?v=4.17.21"></script>
+
+    <script src="asset/react/react.production.min.js?v=17.0.2"></script>
+
+    <script src="asset/react-dom/react-dom.production.min.js?v=17.0.2"></script>
+
+    <script src="asset/reader/index.js?v=1.0.50"></script>
+
+    <script src="asset/plugins/theme-default/index.js?v=1.0.25"></script>
+
+<script type="text/javascript">
+    TopWrite.bootstrap();
+</script>
+</body>
+</html>

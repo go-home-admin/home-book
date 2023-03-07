@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>目录结构 - 框架文档</title>
+    
+    
+</head>
+<body>
+<div id="root"></div>
+<script type="application/payload+json">
+{"id":"5v07om","summary":[{"title":"入门指南","articles":[{"title":"安装","ref":"安装.md","path":"anzhuang.html","metadata":{"mtime":"2023-03-07T10:56:10+08:00"}},{"title":"目录结构","ref":"目录结构.md","path":"mulujiegou.html","metadata":{"mtime":"2023-03-07T10:56:10+08:00"}},{"title":"快速启动","ref":"快速启动.md","path":"kuaisuqidong.html"}]}],"config":{"title":"框架文档"},"file":{"path":"mulujiegou.html","content":"# 目录结构\n\n- [介绍](#introduction)\n- [根目录](#the-root-directory)\n    - [`app` 目录](#the-root-app-directory)\n    - [`config` 目录](#the-config-directory)\n    - [`protobuf` 目录](#the-protobuf-directory)\n    - [`routes` 目录](#the-routes-directory)\n    - [`web` 目录](#the-web-directory)\n- [App 目录](#the-app-directory)\n    - [`common` 目录](#the-common-directory)\n    - [`crontab` 目录](#the-crontab-directory)\n    - [`entity` 目录](#the-entity-directory)\n    - [`message` 目录](#the-message-directory)\n    - [`providers` 目录](#the-providers-directory)\n    - [`queues` 目录](#the-queues-directory)\n\n<a name=\"introduction\"><\/a>\n## 介绍\n\n默认下，框架已经提供最基础的最常用的功能，基础的例如`config`、`log`、`mysql`、`redis`；高级的也开箱提供了信息总线，包括队列服务、延迟队列、信息广播; 更友好的是，你定好接口结构`proto`文件后，可以同时生成`基础代码`和完整`文档`。整个框架核心都是使用`容器`+`依赖注入`实现，您可以替换其中大部分组件。\n\n<a name=\"the-root-directory\"><\/a>\n## 根目录\n\n<a name=\"the-root-app-directory\"><\/a>\n#### App 目录\n\n`app` 目录包含应用程序的核心代码。 我们将很快更详细地探索这个目录； 但是，您应用程序中的几乎所有类都将在此目录中。\n\n<a name=\"the-config-directory\"><\/a>\n#### Config 目录\n\n`config` 目录包含了所有配置，只要是在这个目录下定义的`yaml`类型的文件，框架都会自动加载进来，\n\n\n\n<a name=\"the-protobuf-directory\"><\/a>\n### Protobuf\n`protobuf` 目录包含了所有接口定义，包括路由信息、请求接口，响应接口，文档会根据`proto`直接生成`swaager.json`\n\n<a name=\"the-routes-directory\"><\/a>\n### Routes\n`routes` 目录包含了所有路由信息，不需要手动维护，由 `protobuf` 目录下的proto文件直接生成，在根目录执行命令生成：\n```shell\ntoolset make:route\n```\n\n<a name=\"the-web-directory\"><\/a>\n### Web\n`web` 如果需要的话，这里存放前端文件。\n\n<a name=\"the-common-directory\"><\/a>\n### Common\n`common` 项目通常需要一个通用的工具集合目录\n<a name=\"the-crontab-directory\"><\/a>\n### Crontab\n`crontab` 如果需要定时任务，建议放这里\n<a name=\"the-protobuf-directory\"><\/a>\n### Entity\n`entity` 目录存放orm文件，由`toolset`工具生成，根据数据库结构生成orm, 会生成辅助函数，使用基本和laravel一致，具体请查看 数据库CURD\n<a name=\"the-protobuf-directory\"><\/a>\n### Http\n`http` 目录包含您的控制器、中间件和表单请求。 几乎所有处理进入应用程序的请求的逻辑都将放在这个目录中。\n<a name=\"the-message-directory\"><\/a>\n### Message\n`message` 目录存放您的队列结构，队列结构是一个信息体，每一个信息体都可以被json后放入到queue中，供队列消费者读取。\n<a name=\"the-providers-directory\"><\/a>\n### Providers\n`providers` 目录包含程序中所有的 服务提供者 。服务提供者通过在服务容器中绑定服务、注册事件或执行任何其他任务来引导应用程序以应对传入请求。\n这个目录已经包含了几个提供者。您可以根据需要将自己的提供程序添加到此目录。\n\n<a name=\"the-queues-directory\"><\/a>\n### Queues\n`queues` 目录存放队列的job消费绑定逻辑，一个job应该绑定一个信息体\n","meta":{"mtime":"2023-03-07T10:56:10+08:00"}},"options":{"poweredBy":{"name":"顶想云","link":"https:\/\/www.topthink.com"}}}
+</script>
+
+    <script src="asset/lodash/lodash.min.js?v=4.17.21"></script>
+
+    <script src="asset/react/react.production.min.js?v=17.0.2"></script>
+
+    <script src="asset/react-dom/react-dom.production.min.js?v=17.0.2"></script>
+
+    <script src="asset/reader/index.js?v=1.0.50"></script>
+
+    <script src="asset/plugins/theme-default/index.js?v=1.0.25"></script>
+
+<script type="text/javascript">
+    TopWrite.bootstrap();
+</script>
+</body>
+</html>
